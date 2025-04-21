@@ -1,50 +1,100 @@
-# Welcome to your Expo app 👋
+# Ryt Bank App
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A secure and modern banking application built with React Native and Expo, featuring biometric authentication, transaction management, and a responsive UI that works across web and mobile platforms.
 
-## Get started
+## Features
 
-1. Install dependencies
+- 🔐 Secure authentication with biometrics (mobile) and PIN (web)
+- 💳 Transaction management and viewing
+- 🌓 Dark mode support
+- 🖥️ Cross-platform support (iOS, Android, Web)
+- 📱 Responsive design
+- 🔒 Sensitive data masking
 
+## Prerequisites
+
+Before you begin, ensure you have installed:
+
+- [Node.js](https://nodejs.org/) (v16 or newer)
+- [Git](https://git-scm.com/)
+- [Expo CLI](https://docs.expo.dev/get-started/installation/) (install with `npm install -g expo-cli`)
+
+For mobile development:
+- iOS: [Xcode](https://developer.apple.com/xcode/) (Mac only)
+- Android: [Android Studio](https://developer.android.com/studio)
+
+## Installation
+
+1. Clone the repository:
+   ```bash
+   git clone [repository-url]
+   cd ryt
+   ```
+
+2. Install dependencies:
    ```bash
    npm install
    ```
 
-2. Start the app
+## Running the App
 
-   ```bash
-    npx expo start
-   ```
+You can run the app on different platforms:
 
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
+### Web
 ```bash
-npm run reset-project
+npm run web
+```
+Access the app in your browser at `http://localhost:19006`
+
+Default PIN for web login: `123456`
+
+### iOS
+```bash
+npm run ios
+```
+Requires a Mac with Xcode installed
+
+### Android
+```bash
+npm run android
+```
+Requires Android Studio with an emulator set up
+
+### Development Mode
+To start the development server with options for all platforms:
+```bash
+npm start
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+This will show a QR code and options to run on different platforms.
 
-## Learn more
+## Development
 
-To learn more about developing your project with Expo, look at the following resources:
+- The app uses Expo Router for navigation
+- Authentication is handled through the `useAuthentication` hook
+- Styles are managed using React Native's StyleSheet
+- The app supports both light and dark themes
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+### Project Structure
 
-## Join the community
+- `/app` - Contains all the screens and routing logic
+- `/components` - Reusable React components
+- `/hooks` - Custom React hooks
+- `/services` - Business logic and API services
+- `/constants` - App-wide constants and configurations
+- `/assets` - Images, fonts, and other static assets
 
-Join our community of developers creating universal apps.
+## Testing
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+Run the test suite:
+```bash
+npm test
+```
+
+## Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
